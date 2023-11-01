@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+ <head>
+  <meta charset="UTF-8"/>
+   <link rel="icon" href="">
+     <title>Time Day┃ver.2</title>
+     <style type="text/css">body {
+         background-color: #000;
+        .contents_box::-webkit-scrollbar{ display: none; }
+       }
+     p {
+         font-size: 3.7em;
+         letter-spacing: 0.25em;
+         border-bottom: solid 4px;
+        }
+     p1 {
+         font-size: 12.3em;
+         letter-spacing: 0.06em;     
+         font-weight: bold;  
+        } 
+    .Hi
+       {  
+        font-family: sans-serify;
+        color: #ddc;
+        text-align: center;
+        line-height: 4.9em;
+        position: absolute;  
+        width: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        }
+     </style>
+ </head> 
+<body>
+  <div class="Hi">
+  <p></p>  
+  <p1></p1>
+  </div>
+  <script type="text/javascript">
+(function(d){
+  let p = d.getElementsByTagName('p')[0];
+
+  setInterval(function(){
+    let date = new Date(),
+      ti =
+          date.getFullYear() + '-' +
+          ('0' + (date.getMonth() + 1)).slice(-2) + '-' +
+          ('0' + date.getDate()).slice(-2) 
+        da = 
+          (date.getDay());
+      En = 
+[" SUN", " MON"," TUE", " WED", " THU", " FRI", " SAT"][da];
+
+    p.textContent = ti + En;
+  }, 0);
+}(document));
+
+(function(d){
+  let p1 = d.getElementsByTagName('p1')[0];
+
+  setInterval(function(){
+    let date = new Date(),
+     
+      me =
+          ('0' + date.getHours()).slice(-2) + ':' +
+          ('0' + date.getMinutes()).slice(-2) + ':' +
+          ('0' + date.getSeconds()).slice(-2) 
+      
+    p1.textContent = me;
+  }, 0);
+}(document));
+</script>
+</body>
+</html>
